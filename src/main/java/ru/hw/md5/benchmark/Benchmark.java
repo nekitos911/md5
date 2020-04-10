@@ -37,7 +37,12 @@ public class Benchmark {
 
     @SneakyThrows
     private static long testHash() {
-        val data = RandomStringUtils.randomAscii(BLOCKS * Utils.BLOCK_SIZE);
+        val data = RandomStringUtils.randomAscii(BLOCKS * Utils.BLOCK_SIZE).getBytes();
+
+        // warmup
+        for (int i = 0; i < 10; i++) {
+            System.out.println(MD5.getHash(data));
+        }
 
         String res = null;
         var begin = Instant.now();

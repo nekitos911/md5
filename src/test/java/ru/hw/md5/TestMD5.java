@@ -15,7 +15,7 @@ public class TestMD5 {
                     "testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest:9C3EE9CFC67011D825B5046C1BCD479B"},
                     delimiter = ':')
     public void test(String inputStr, String expectedHash) {
-        val actualHash = MD5.getHash(inputStr);
+        val actualHash = MD5.getHash(inputStr.getBytes());
         assertEquals(expectedHash, actualHash);
     }
 }

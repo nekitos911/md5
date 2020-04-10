@@ -27,8 +27,8 @@ public class MD5 {
                 .toArray();
     }
 
-    public static String getHash(String data) {
-        val extendedData = extendData(data.getBytes());
+    public static String getHash(byte[] data) {
+        val extendedData = extendData(data);
         return rounds(extendedData);
     }
 
